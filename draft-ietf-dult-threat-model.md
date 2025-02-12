@@ -71,6 +71,18 @@ In order to minimize these privacy risks, it is necessary to analyze and be able
 - **passive scanning**: a search for location trackers running in the background, often accompanied by notifications for the user
 - **tracking tag**: a small, concealable device that broadcasts location data to other devices
 
+# Requirements
+
+## Users should be able to disable trackers
+
+In order to effectively prevent unwanted location tracking, users should be able to disable location tracker tags. This includes a non-owner user being tracked by a tag's owner, as well as an owner user who believes that an attacker is using their own tag to track them.
+
+## Platforms should assist users in locating trackers
+
+Even after a location tracker is detected through passive or active scanning, a user may have difficulty in locating it. For example, a tag may be buried under a vehicle cushion. Platforms should allow users who have discovered a tracker through passive or active scanning to request that the tracker signal its presence.
+
+This assistance should be done in a way that is accessible to users with sensory or other impairments by using multimodal signals. For instance, if a platform relies on sounds emitted by a tag to help a user locate it, d/Deaf and hard of hearing users may not be able to use this feature. Platforms should combine different types of signals, such as sound, light, and vibration.
+
 # Security Considerations
 
 Incorporation of this threat analysis into the DULT protocol does not introduce any security risks not already inherent in the underlying Bluetooth tracking tag protocols. Existing attempts to prevent unwanted tracking by the owner of a tag have been criticized as potentially making it easier to engage in unwanted tracking of the owner of a tag. However, Beck et al. have [demonstrated](https://eprint.iacr.org/2023/1332.pdf) a technological solution that employs secret sharing and error correction coding.
@@ -233,6 +245,15 @@ Attackers with nation-state level expertise and resources who deploy custom or a
 
 N/A
 
+# Specific Attacks
+
+## Attack: Tags non-compliant due to certain disablements or modifications
+
+An attacker might physically modify a tag in a way that makes it non-compliant with the standard (e.g. disabling a speaker or vibration). An attacker might make alterations to a tag's firmware that make it non-compliant with the standard.
+
+## Attack: Misuse of remote disablement
+
+An attacker might misuse remote disablement features to prevent a victim detecting or locating a tag.
 
 # Design Considerations
 
